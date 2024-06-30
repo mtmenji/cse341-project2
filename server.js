@@ -3,6 +3,8 @@ const app = express();
 const mongodb = require('./data/database');
 const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+dotenv.config();
 
 app.use(bodyParser.json());
 app.use((req, res, next) => {
