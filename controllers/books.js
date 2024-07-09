@@ -31,7 +31,7 @@ const getSingle = async (req, res) => {
     .toArray
     .then((books) => {
         res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(books);
+        res.status(200).json(books[0]);
     })
     .catch(err); {
         res.status(400).json({message: err});
