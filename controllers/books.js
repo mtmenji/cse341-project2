@@ -8,13 +8,14 @@ const getAll = async (req, res) => {
         .db('project2')
         .collection('books')
         .find()
-        .toArray((err, books) => {
-            if (err) {
-                res.status(400).json({message: err});
-            }
+        .toArray()
+        .then((books) => {
             res.setHeader('Content-Type', 'application/json');
             res.status(200).json(books);
         })
+        .catch(err); {
+            res.status(400).json({message: err});
+        }
 };
 
 const getSingle = async (req, res) => {
@@ -27,13 +28,14 @@ const getSingle = async (req, res) => {
     .db('project2')
     .collection('books')
     .find({_id: bookId})
-    .toArray((err, books) => {
-        if (err) {
-            res.status(400).json({message: err});
-        }
+    .toArray
+    .then((books) => {
         res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(books[0]);
+        res.status(200).json(books);
     })
+    .catch(err); {
+        res.status(400).json({message: err});
+    }
 };
 
 const createBook = async (req, res) => {
