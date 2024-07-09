@@ -13,9 +13,9 @@ const getAll = async (req, res) => {
             res.setHeader('Content-Type', 'application/json');
             res.status(200).json(books);
         })
-        .catch(err); {
+        .catch((err) => {
             res.status(400).json({message: err});
-        }
+        })
 };
 
 const getSingle = async (req, res) => {
@@ -33,9 +33,9 @@ const getSingle = async (req, res) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(books[0]);
     })
-    .catch(err); {
+    .catch((err) => {
         res.status(400).json({message: err});
-    }
+    })
 };
 
 const createBook = async (req, res) => {
