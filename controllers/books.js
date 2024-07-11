@@ -28,7 +28,7 @@ const getSingle = async (req, res) => {
     .db('project2')
     .collection('books')
     .find({_id: bookId})
-    .toArray
+    .toArray()
     .then((books) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(books[0]);
