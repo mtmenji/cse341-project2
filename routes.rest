@@ -7,12 +7,12 @@ GET https://cse341-project2-a570.onrender.com/books/668088670b756ba4f239a236
 
 
 ### create book
-POST https://cse341-project2-a570.onrender.com/books/ HTTP/1.1 Content-Type: application/json
+POST http://localhost:3000/books/ HTTP/1.1 content-type: application/json
 
 {
   "title": "any",
   "author": "any",
-  "publicationYear": "any"
+  "publicationYear": "1999"
 }
 
 
@@ -28,4 +28,4 @@ PUT https://cse341-project2-a570.onrender.com/books/66809c741b20113167cb5c8a HTT
 
 
 # Delete a book.
-DELETE https://cse341-project2-a570.onrender.com/books/66809bf41b20113167cb5c89 HTTP/1.1
+DELETE https://cse341-project2-a570.onrender.com/books/66916d8a359ee91522ea00aa HTTP/1.1
