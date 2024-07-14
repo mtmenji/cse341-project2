@@ -68,7 +68,7 @@ const updateBook = async (req, res) => {
         publicationYear: req.body.publicationYear
     }
     const response = await mongodb.getDatabase().db('project2').collection('books').replaceOne({_id: bookId}, book);
-    if (response.modificationCount > 0) {
+    if (response.modifiedCount > 0) {
         res.status(204).send();
     } else {
         res.status(500).json(response.error || 'Some error occured while updating the user.');
