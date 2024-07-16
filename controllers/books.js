@@ -61,6 +61,7 @@ const updateBook = async (req, res) => {
     if (!ObjectId.isValid(req.params.id)) {
         res.status(400).json('Must use a valid book id to update a book.');
     }
+
     const bookId = new ObjectId(req.params.id);
     const book = {
         title: req.body.title,
