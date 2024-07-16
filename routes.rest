@@ -7,7 +7,7 @@ GET https://cse341-project2-a570.onrender.com/books/668088670b756ba4f239a236
 
 
 ### create book
-POST http://localhost:3000/books/ HTTP/1.1 content-type: application/json
+POST https://cse341-project2-a570.onrender.com/books/ HTTP/1.1 content-type: application/json
 
 {
   "title": "any",
